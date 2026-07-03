@@ -1,0 +1,20 @@
+.realtime-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: var(--radius-pill);
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.realtime-on {
+    color: var(--color-success-soft);
+    background: var(--surface-success);
+    border: 1px solid var(--border-success);
+}
+
+.realtime-off {
+    color: var(--color-danger-soft);
+    background: var(--surface-danger);
+    border: 1px solid var(--border-danger);
+}

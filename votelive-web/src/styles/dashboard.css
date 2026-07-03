@@ -1,0 +1,213 @@
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 20px;
+}
+
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-card);
+}
+
+.panel h2 {
+    margin-bottom: 18px;
+    font-size: 22px;
+}
+
+.chart-box {
+    width: 100%;
+    height: 280px;
+    margin-bottom: 20px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+    background: var(--surface-soft);
+    border: 1px solid var(--border-soft);
+}
+
+.list-item span {
+    color: #e2e8f0;
+    font-weight: 700;
+}
+
+.list-item small {
+    display: block;
+    color: var(--color-muted);
+    font-size: 12px;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.list-item strong {
+    min-width: 44px;
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: var(--radius-pill);
+    background: var(--surface-primary);
+    color: #93c5fd;
+}
+
+.status-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-label i {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-pill);
+    display: inline-block;
+}
+
+.ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ranking-item {
+    display: grid;
+    grid-template-columns: 58px 1fr 82px;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 18px;
+    background: linear-gradient(
+            135deg,
+            rgba(30, 41, 59, 0.95),
+            rgba(15, 23, 42, 0.95)
+    );
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    transition:
+            transform 0.2s ease,
+            border-color 0.2s ease,
+            background 0.2s ease;
+}
+
+.ranking-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(96, 165, 250, 0.45);
+    background: linear-gradient(
+            135deg,
+            rgba(30, 64, 175, 0.28),
+            rgba(15, 23, 42, 0.95)
+    );
+}
+
+.ranking-position {
+    width: 46px;
+    height: 46px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-primary);
+    color: #93c5fd;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.ranking-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ranking-content strong {
+    color: var(--color-text);
+    font-size: 18px;
+}
+
+.ranking-content span {
+    color: var(--color-muted);
+    font-size: 13px;
+}
+
+.ranking-votes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    background: var(--surface-primary);
+    color: #93c5fd;
+}
+
+.ranking-votes strong {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.ranking-votes span {
+    font-size: 11px;
+    margin-top: 4px;
+    color: #bfdbfe;
+}
+
+.recharts-default-tooltip {
+    background: var(--color-bg-dark) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    box-shadow: var(--shadow-card) !important;
+    padding: 10px 12px !important;
+}
+
+.recharts-tooltip-label {
+    color: var(--color-text) !important;
+    font-weight: 800 !important;
+    margin-bottom: 6px !important;
+}
+
+.recharts-tooltip-item,
+.recharts-tooltip-item-name,
+.recharts-tooltip-item-value {
+    color: var(--color-text) !important;
+    font-weight: 700 !important;
+}
+
+.recharts-tooltip-item-separator {
+    color: var(--color-muted) !important;
+}
+
+.recharts-tooltip-cursor {
+    fill: rgba(59, 130, 246, 0.08) !important;
+}
+
+.list-item span,
+.ranking-content strong,
+.ranking-content span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.ranking-content strong {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ranking-content span {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

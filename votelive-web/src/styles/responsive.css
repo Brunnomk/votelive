@@ -1,0 +1,252 @@
+@media (max-width: 1000px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .users-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .user-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .user-meta {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 800px) {
+    .result-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .top-nav {
+        padding: 14px 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .enquete-card-header {
+        flex-direction: column;
+    }
+
+    .option-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section-title {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background:
+                radial-gradient(circle at top, rgba(37, 99, 235, 0.18), transparent 28%),
+                var(--color-bg);
+    }
+
+    .top-nav {
+        position: sticky;
+        top: 0;
+        padding: 12px 14px;
+        gap: 10px;
+    }
+
+    .nav-brand {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+    }
+
+    .nav-links a {
+        padding: 9px 6px;
+        font-size: 12px;
+        text-align: center;
+        border-radius: var(--radius-md);
+    }
+
+    .app {
+        padding: 22px 16px 90px;
+    }
+
+    .hero {
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    .badge {
+        margin-bottom: 12px;
+        padding: 7px 12px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+        line-height: 1.15;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        max-width: 320px;
+        margin: 0 auto;
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    .dashboard-actions {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .refresh-button,
+    .secondary-button,
+    .primary-button,
+    .danger-button {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        text-align: center;
+        padding: 12px 16px;
+    }
+
+    .form-panel {
+        width: 100%;
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    .poll-form {
+        gap: 18px;
+    }
+
+    .poll-form h2 {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .form-group {
+        gap: 8px;
+    }
+
+    .form-group label {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 13px 14px;
+        border-radius: 14px;
+        font-size: 14px;
+    }
+
+    .form-group textarea {
+        min-height: 90px;
+    }
+
+    .form-section-title {
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .small-button,
+    .remove-button {
+        width: 100%;
+    }
+
+    .submit-button {
+        align-self: center;
+    }
+
+    .cards-grid,
+    .result-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 18px;
+        text-align: center;
+    }
+
+    .card strong {
+        font-size: 30px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    .chart-box {
+        height: 240px;
+    }
+
+    .ranking-item {
+        grid-template-columns: 48px 1fr;
+    }
+
+    .ranking-votes {
+        grid-column: 1 / -1;
+        width: 100%;
+        flex-direction: row;
+        gap: 6px;
+    }
+
+    .enquete-card {
+        padding: 20px;
+    }
+
+    .enquete-card-header {
+        align-items: center;
+        text-align: center;
+    }
+
+    .enquete-card p {
+        text-align: center;
+    }
+
+    .enquete-meta {
+        flex-direction: column;
+    }
+
+    .enquete-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .users-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .user-card {
+        align-items: center;
+        text-align: center;
+    }
+
+    .user-meta {
+        align-items: center;
+    }
+}

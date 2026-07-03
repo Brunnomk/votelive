@@ -1,0 +1,39 @@
+﻿# Java / Spring Boot
+votelive-api/target/
+*.class
+
+# Logs
+*.log
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Node / React
+votelive-web/node_modules/
+votelive-web/dist/
+votelive-web/.vite/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.production.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+target/
+dist/
+node_modules/
+
+# Database / local configs
+*.db
+
+# Local Spring Boot config
+votelive-api/src/main/resources/application.properties
