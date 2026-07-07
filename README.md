@@ -1,670 +1,352 @@
-# MesaLivre — Sistema de Reservas para Restaurantes
-
-https://img.shields.io/badge/status-em%20desenvolvimento-blue?style=for-the-badge
-https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white
-https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?style=for-the-badge&logo=springboot&logoColor=white
-https://img.shields.io/badge/Angular-17%2B-DD0031?style=for-the-badge&logo=angular&logoColor=white
-https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
-https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white
-https://img.shields.io/badge/API-REST-7B42BC?style=for-the-badge
-https://img.shields.io/badge/Layout-Responsivo-00C853?style=for-the-badge
-
-Sistema full stack para gerenciamento de reservas em restaurantes, desenvolvido com foco em controle de mesas, clientes, horários, disponibilidade em tempo real e prevenção de conflitos de reserva.
-
-O projeto permite cadastrar restaurantes, mesas, clientes e reservas, além de acompanhar dados pela dashboard e consultar a disponibilidade das mesas de forma prática e organizada.
-
+VoteLive — Real-Time Voting Dashboard
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-3b82f6)
+![Java](https://img.shields.io/badge/Java-21-orange)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F)
+![React](https://img.shields.io/badge/React-TypeScript-61DAFB)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-database-336791)
+![WebSocket](https://img.shields.io/badge/WebSocket-real--time-7c3aed)
+📌 Sobre o projeto
+VoteLive é uma aplicação Full Stack de votação em tempo real, desenvolvida com Java + Spring Boot, PostgreSQL, React + TypeScript e WebSocket/STOMP.
+O sistema permite criar usuários, cadastrar enquetes com múltiplas opções, votar em enquetes abertas, visualizar resultados com gráficos interativos e acompanhar atualizações em tempo real no dashboard e na tela de resultado individual.
+O projeto foi desenvolvido com foco em arquitetura, boas práticas, experiência visual moderna e funcionalidades reais de um produto SaaS.
 ---
-
-## Tecnologias Utilizadas
-
-### Frontend
-
-- Angular
-- Angular Standalone Components
-- TypeScript
-- SCSS
-- HTML5
-- Consumo de API REST
-- Design responsivo
-
-### Backend
-
-- Java 21
-- Spring Boot
-- Spring Web
-- Spring Data JPA
-- Maven Wrapper
-- API REST
-- Validações de regras de negócio
-
-### Banco de Dados
-
-- PostgreSQL
-- Modelo relacional
-- Persistência real dos dados
-- Relacionamentos entre restaurantes, mesas, clientes e reservas
-
-### Ferramentas e Conceitos
-
-- Git
-- GitHub
-- Arquitetura REST
-- Operações CRUD
-- Integração frontend/backend
-- Organização em camadas
-- Responsividade
-- Regras de negócio
-- Projeto full stack
-
+🚀 Funcionalidades
+Usuários
+Cadastro de usuários
+Listagem de usuários cadastrados
+Seleção de usuário ao criar enquete
+Seleção de usuário ao votar
+Enquetes
+Criação de enquetes pelo frontend
+Adição dinâmica de opções de voto
+Listagem de enquetes
+Status de enquete:
+`ABERTA`
+`ENCERRADA`
+`CANCELADA`
+Encerramento manual de enquetes
+Bloqueio de votos em enquetes encerradas
+Votação
+Registro de votos por usuário
+Validação para impedir voto duplicado na mesma enquete
+Validação para impedir voto em opção inválida
+Validação para impedir voto em enquete encerrada
+Atualização automática dos resultados após cada voto
+Dashboard
+Cards com resumo geral
+Total de usuários
+Total de enquetes
+Total de votos
+Enquetes abertas
+Enquetes encerradas
+Gráfico de status das enquetes
+Ranking global das opções mais votadas
+Atualização manual e automática
+Tempo real
+Comunicação em tempo real com WebSocket/STOMP
+Resultado individual da enquete atualiza automaticamente
+Dashboard principal atualiza automaticamente
+Indicador visual de conexão em tempo real
 ---
-
-## Sobre o Projeto
-
-O **MesaLivre** é um sistema de reservas para restaurantes desenvolvido para substituir controles manuais de agendamento por uma solução digital mais organizada, prática e eficiente.
-
-A aplicação permite que restaurantes gerenciem mesas, clientes, reservas e disponibilidade em tempo real, evitando conflitos de horários e facilitando o acompanhamento das reservas cadastradas.
-
-O sistema possui frontend em Angular, backend em Spring Boot e banco de dados PostgreSQL, com comunicação realizada através de uma API REST.
-
+🧱 Tecnologias utilizadas
+Backend
+Java 21
+Spring Boot 3
+Spring Web
+Spring Data JPA
+Spring Validation
+Spring WebSocket
+PostgreSQL
+Hibernate
+Maven
+Frontend
+React
+TypeScript
+Vite
+Axios
+React Router DOM
+Recharts
+STOMP.js
+SockJS Client
+CSS modularizado
+Banco de dados
+PostgreSQL
 ---
-
-## Funcionalidades
-
-### Dashboard
-
-A dashboard apresenta uma visão geral do sistema com dados reais vindos do backend.
-
-Funcionalidades disponíveis:
-
-- Total de restaurantes cadastrados
-- Total de mesas cadastradas
-- Total de clientes cadastrados
-- Total de reservas registradas
-- Listagem de reservas recentes
-- Resumo de disponibilidade
-- Cards informativos com dados atualizados
-- Interface adaptada para desktop, tablet e celular
-
----
-
-### Gestão de Restaurantes
-
-Permite cadastrar e listar restaurantes no sistema.
-
-Funcionalidades:
-
-- Cadastro de restaurantes
-- Listagem de restaurantes
-- Integração com banco de dados
-- Associação de restaurantes com mesas
-- Estrutura preparada para futuras expansões
-
-Dados principais:
-
-- Nome
-- Endereço
-- Telefone
-
----
-
-### Gestão de Mesas
-
-Permite cadastrar mesas ou salas associadas a um restaurante.
-
-Funcionalidades:
-
-- Cadastro de mesas
-- Listagem de mesas
-- Associação da mesa a um restaurante
-- Definição de capacidade máxima
-- Definição do tipo: mesa ou sala
-- Controle de status ativo/inativo
-
-Dados principais:
-
-- Restaurante
-- Número da mesa
-- Capacidade
-- Tipo
-- Status
-
----
-
-### Gestão de Clientes
-
-Permite gerenciar clientes cadastrados no sistema.
-
-Funcionalidades:
-
-- Cadastro de clientes
-- Listagem de clientes
-- Exclusão de clientes
-- Integração real com backend
-- Persistência dos dados no PostgreSQL
-
-Dados principais:
-
-- Nome
-- Telefone
-- E-mail
-
----
-
-### Gestão de Reservas
-
-Funcionalidade principal do sistema, responsável por registrar e acompanhar reservas.
-
-Funcionalidades:
-
-- Criação de reservas
-- Listagem de reservas
-- Associação entre cliente, mesa e restaurante
-- Controle de data e horário
-- Controle de quantidade de pessoas
-- Controle de status da reserva
-- Validação para evitar conflitos de horário
-- Conversão e exibição amigável de status no frontend
-- Integração real entre frontend, backend e banco de dados
-
-Dados principais:
-
-- Cliente
-- Mesa
-- Data da reserva
-- Hora de início
-- Hora de fim
-- Quantidade de pessoas
-- Status
-- Observações
-
----
-
-### Disponibilidade em Tempo Real
-
-O sistema calcula a disponibilidade das mesas com base nas reservas existentes.
-
-Funcionalidades:
-
-- Consulta de disponibilidade por restaurante
-- Filtro por data
-- Filtro por horário inicial
-- Filtro por horário final
-- Identificação de mesas disponíveis
-- Identificação de mesas ocupadas
-- Prevenção de reservas sobrepostas
-
-Exemplo:
-
-Uma mesa reservada das `19:00` às `21:00` não poderá receber outra reserva no mesmo intervalo ou em horário sobreposto.
-
----
-
-### Status das Reservas
-
-O sistema possui controle de status para acompanhar o ciclo de vida de uma reserva.
-
-Status disponíveis:
-
-- `AGENDADA`
-- `CONFIRMADA`
-- `CANCELADA`
-- `FINALIZADA`
-- `NO_SHOW`
-
-Fluxo esperado:
-
-1. Cliente realiza uma reserva
-2. Reserva é criada como agendada
-3. Restaurante confirma a reserva
-4. Cliente comparece ao restaurante
-5. Reserva é finalizada
-6. Caso o cliente não compareça, a reserva pode ser marcada como no-show
-
----
-
-### Histórico de Reservas
-
-O sistema possui estrutura preparada para registrar alterações realizadas nas reservas.
-
-Informações previstas:
-
-- Reserva alterada
-- Ação realizada
-- Status anterior
-- Novo status
-- Observação
-- Data da alteração
-- Usuário responsável
-
-Essa funcionalidade é importante para auditoria, rastreabilidade e controle operacional.
-
----
-
-## Regras de Negócio
-
-O sistema foi desenvolvido considerando regras essenciais para o funcionamento real de restaurantes.
-
-Principais regras:
-
-- Um restaurante pode possuir várias mesas ou salas
-- Cada mesa ou sala possui uma capacidade máxima
-- Um cliente pode fazer uma reserva para uma data e horário específicos
-- Uma mesa não pode ter duas reservas no mesmo intervalo de horário
-- Não é possível criar reserva em horário já ocupado
-- A reserva possui controle de status
-- O restaurante pode confirmar, cancelar ou finalizar uma reserva
-- A disponibilidade das mesas é calculada em tempo real
-- É possível visualizar próximas reservas e histórico
-- As operações principais são persistidas no banco de dados
-
----
-
-## Modelo de Dados
-
-O projeto utiliza um modelo relacional com entidades bem definidas.
-
-### Restaurantes
-
-Representa os restaurantes cadastrados no sistema.
-
-Campos principais:
-
-- `id`
-- `nome`
-- `endereco`
-- `telefone`
-
----
-
-### Mesas
-
-Representa mesas ou salas disponíveis em um restaurante.
-
-Campos principais:
-
-- `id`
-- `restaurante_id`
-- `numero`
-- `capacidade`
-- `tipo`
-- `ativo`
-
----
-
-### Clientes
-
-Representa os clientes que realizam reservas.
-
-Campos principais:
-
-- `id`
-- `nome`
-- `telefone`
-- `email`
-
----
-
-### Reservas
-
-Representa as reservas feitas pelos clientes.
-
-Campos principais:
-
-- `id`
-- `cliente_id`
-- `mesa_id`
-- `data_reserva`
-- `hora_inicio`
-- `hora_fim`
-- `pessoas`
-- `status`
-- `observacao`
-- `criado_em`
-
----
-
-### Histórico de Reservas
-
-Representa o histórico de alterações feitas nas reservas.
-
-Campos principais:
-
-- `id`
-- `reserva_id`
-- `acao`
-- `status_anterior`
-- `status_novo`
-- `observacao`
-- `criado_em`
-- `usuario_id`
-
----
-
-### Usuários
-
-Representa usuários administrativos do sistema.
-
-Campos principais:
-
-- `id`
-- `nome`
-- `email`
-- `senha_hash`
-- `perfil`
-
-Perfis previstos:
-
-- `ADMIN`
-- `ATENDENTE`
-
----
-
-## API REST
-
-O backend expõe endpoints REST para integração com o frontend.
-
-### Restaurantes
-
-| Método | Endpoint | Descrição |
-| --- | --- | --- |
-| `POST` | `/restaurantes` | Criar restaurante |
-| `GET` | `/restaurantes` | Listar restaurantes |
-| `GET` | `/restaurantes/{restauranteId}/mesas` | Listar mesas de um restaurante |
-
----
-
-### Mesas
-
-| Método | Endpoint | Descrição |
-| --- | --- | --- |
-| `POST` | `/mesas` | Cadastrar mesa ou sala |
-| `GET` | `/mesas` | Listar mesas |
-
----
-
-### Clientes
-
-| Método | Endpoint | Descrição |
-| --- | --- | --- |
-| `POST` | `/clientes` | Cadastrar cliente |
-| `GET` | `/clientes` | Listar clientes |
-| `DELETE` | `/clientes/{clienteId}` | Excluir cliente |
-
----
-
-### Reservas
-
-| Método | Endpoint | Descrição |
-| --- | --- | --- |
-| `POST` | `/reservas` | Criar reserva |
-| `GET` | `/reservas` | Listar reservas com filtros |
-| `GET` | `/reservas/{reservaId}` | Detalhar reserva |
-| `PATCH` | `/reservas/{reservaId}/confirmar` | Confirmar reserva |
-| `PATCH` | `/reservas/{reservaId}/cancelar` | Cancelar reserva |
-| `PATCH` | `/reservas/{reservaId}/finalizar` | Finalizar reserva |
-
----
-
-### Disponibilidade
-
-| Método | Endpoint | Descrição |
-| --- | --- | --- |
-| `GET` | `/restaurantes/{restauranteId}/disponibilidade` | Consultar disponibilidade das mesas |
-
-Exemplo de consulta:
-
-```http
-GET /restaurantes/1/disponibilidade?data=2026-06-12&inicio=19:00&fim=21:00
+🖥️ Screenshots
+> Adicione aqui os prints do projeto.
+```text
+screenshots/
+├── dashboard.png
+├── enquetes.png
+├── criar-enquete.png
+├── resultado.png
+├── votar.png
+└── usuarios.png
 ```
-
+Exemplo em Markdown:
+```md
+![Dashboard](./screenshots/dashboard.png)
+```
 ---
-
-## Exemplo de Payload
-
-### Criar reserva
-
+📁 Estrutura do projeto
+```text
+votelive/
+├── votelive-api/       # Backend Spring Boot
+└── votelive-web/       # Frontend React + TypeScript
+```
+Backend
+```text
+votelive-api/
+├── src/main/java/com/brunno/votelive/
+│   ├── config/
+│   ├── controller/
+│   ├── dto/
+│   ├── entity/
+│   ├── exception/
+│   ├── repository/
+│   └── service/
+└── pom.xml
+```
+Frontend
+```text
+votelive-web/
+├── src/
+│   ├── pages/
+│   ├── services/
+│   ├── styles/
+│   ├── types/
+│   ├── App.css
+│   ├── App.tsx
+│   └── main.tsx
+└── package.json
+```
+---
+🗄️ Modelo de dados
+Usuário
+```text
+usuarios
+- id
+- nome
+- email
+- data_criacao
+```
+Enquete
+```text
+enquetes
+- id
+- titulo
+- pergunta
+- status
+- data_criacao
+- data_encerramento
+- usuario_id
+```
+Opção de voto
+```text
+opcoes_voto
+- id
+- texto
+- quantidade_votos
+- enquete_id
+```
+Voto
+```text
+votos
+- id
+- usuario_id
+- enquete_id
+- opcao_id
+- data_voto
+```
+---
+🔌 Principais endpoints da API
+Usuários
+```http
+POST /api/usuarios
+GET /api/usuarios
+GET /api/usuarios/{id}
+```
+Enquetes
+```http
+POST /api/enquetes
+GET /api/enquetes
+GET /api/enquetes/{id}
+PATCH /api/enquetes/{id}/encerrar
+GET /api/enquetes/{id}/resultado
+```
+Votos
+```http
+POST /api/enquetes/{enqueteId}/votos
+```
+Exemplo de payload:
 ```json
 {
-  "clienteId": 1,
-  "mesaId": 12,
-  "data": "2026-06-12",
-  "horaInicio": "19:30",
-  "horaFim": "21:30",
-  "pessoas": 4
+  "usuarioId": 1,
+  "opcaoId": 2
 }
 ```
-
----
-
-## Arquitetura do Projeto
-
-O projeto segue uma arquitetura full stack separada entre frontend e backend.
-
+Dashboard
+```http
+GET /api/dashboard/resumo
+GET /api/dashboard/status-enquetes
+GET /api/dashboard/ranking-opcoes
+```
+WebSocket
 ```text
-MesaLivre
-├── frontend
-│   ├── src
-│   ├── app
-│   ├── components
-│   ├── pages
-│   ├── services
-│   └── styles
-│
-├── backend
-│   ├── src
-│   ├── main
-│   ├── java
-│   ├── controller
-│   ├── service
-│   ├── repository
-│   ├── entity
-│   └── dto
-│
-└── database
-    └── PostgreSQL
+/ws
 ```
-
----
-
-## Responsividade
-
-A interface foi ajustada para funcionar corretamente em diferentes tamanhos de tela.
-
-Dispositivos suportados:
-
-- Desktop
-- Notebook
-- Tablet
-- Smartphone
-
-Recursos responsivos:
-
-- Menu lateral em telas grandes
-- Menu mobile em telas menores
-- Cards adaptáveis
-- Tabelas e listas responsivas
-- Melhor experiência em dispositivos móveis
-
----
-
-## Como Executar o Projeto
-
-### Pré-requisitos
-
-Antes de iniciar, é necessário ter instalado:
-
-- Java 21
-- Node.js
-- Angular CLI
-- PostgreSQL
-- Git
-
----
-
-### Executando o Backend
-
-Acesse a pasta do backend:
-
-```bash
-cd backend
-```
-
-Execute o projeto com Maven Wrapper:
-
-```bash
-./mvnw spring-boot:run
-```
-
-No Windows:
-
-```bash
-mvnw.cmd spring-boot:run
-```
-
-A API ficará disponível em:
-
+Canais utilizados:
 ```text
-http://localhost:8080
+/topic/enquetes/{id}/resultado
+/topic/dashboard/atualizar
 ```
-
 ---
-
-### Configuração do Banco de Dados
-
-Crie um banco PostgreSQL para o projeto.
-
-```sql
-CREATE DATABASE mesalivre;
+⚙️ Como executar localmente
+Pré-requisitos
+Antes de começar, tenha instalado:
+Java 21
+Node.js
+PostgreSQL
+IntelliJ IDEA ou outra IDE
+Git
+---
+Backend — Spring Boot
+Entre na pasta do backend:
+```bash
+cd votelive-api
 ```
-
-Configure o arquivo `application.properties` ou `application.yml` com os dados do banco:
-
+Configure o arquivo:
+```text
+src/main/resources/application.properties
+```
+Exemplo local:
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/mesalivre
-spring.datasource.username=seu_usuario
-spring.datasource.password=sua_senha
+spring.application.name=votelive-api
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/votelive_db
+spring.datasource.username=postgres
+spring.datasource.password=SUA_SENHA
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
 ```
-
----
-
-### Executando o Frontend
-
-Acesse a pasta do frontend:
-
+Execute o backend:
 ```bash
-cd frontend
+./mvnw spring-boot:run
 ```
-
+No Windows:
+```bash
+./mvnw.cmd spring-boot:run
+```
+A API ficará disponível em:
+```text
+http://localhost:8080
+```
+---
+Frontend — React
+Entre na pasta do frontend:
+```bash
+cd votelive-web
+```
 Instale as dependências:
-
 ```bash
 npm install
 ```
-
-Execute o projeto:
-
+Execute o frontend:
 ```bash
-ng serve
+npm run dev
 ```
-
-A aplicação ficará disponível em:
-
+O frontend ficará disponível em:
 ```text
-http://localhost:4200
+http://localhost:5173
 ```
-
 ---
-
-## Fluxo de Uso
-
-1. Cadastrar restaurante
-2. Cadastrar mesas ou salas
-3. Cadastrar clientes
-4. Criar uma reserva
-5. Consultar disponibilidade
-6. Confirmar reserva
-7. Finalizar ou cancelar reserva
-8. Acompanhar dados pela dashboard
-
+🌐 Configuração de CORS
+Durante o desenvolvimento local, o backend libera requisições do frontend em:
+```text
+http://localhost:5173
+```
+A configuração fica em:
+```text
+votelive-api/src/main/java/com/brunno/votelive/config/CorsConfig.java
+```
 ---
-
-## Diferenciais do Projeto
-
-- Projeto full stack completo
-- Integração real entre frontend, backend e banco de dados
-- API REST estruturada
-- Regras de negócio aplicadas
-- Controle de conflitos de reserva
-- Dashboard com dados reais
-- Interface moderna e responsiva
-- Organização em camadas
-- Código preparado para evolução
-- Projeto com potencial de uso real
-- Excelente para portfólio profissional
-- Separação clara entre frontend e backend
-- Uso de banco de dados relacional
-- Estrutura preparada para autenticação e controle de usuários
-- Fluxo de reserva próximo de um cenário real de restaurante
-
+🔄 Funcionamento do tempo real
+O fluxo em tempo real funciona assim:
+```text
+Usuário registra voto
+↓
+Backend salva voto no PostgreSQL
+↓
+Backend recalcula resultado da enquete
+↓
+Backend publica evento WebSocket
+↓
+Frontend recebe evento
+↓
+Gráficos e cards são atualizados automaticamente
+```
 ---
-
-## Status do Projeto
-
-Projeto em desenvolvimento/evolução.
-
-Funcionalidades já implementadas:
-
-- Backend integrado ao PostgreSQL
-- Listagem e cadastro de restaurantes
-- Listagem e cadastro de mesas
-- Listagem, cadastro e exclusão de clientes
-- Listagem e criação de reservas
-- Dashboard com dados reais
-- Responsividade em desktop, tablet e celular
-- Menu mobile funcional
-- Integração entre frontend Angular e backend Spring Boot
-
+📌 Regras de negócio implementadas
+Usuário não pode votar duas vezes na mesma enquete
+Usuário só pode votar em enquete aberta
+Opção escolhida precisa pertencer à enquete
+Enquete encerrada não aceita votos
+Resultado calcula total de votos, percentual e vencedor
+Dashboard atualiza dados em tempo real após novo voto
 ---
-
-## Melhorias Futuras
-
-Funcionalidades planejadas para evolução do sistema:
-
-- Autenticação com login real
-- Controle de permissões por perfil
-- Modo demonstração com dados fictícios
-- Envio de notificações por e-mail
-- Envio de lembretes por WhatsApp
-- Política de cancelamento configurável
-- Avaliação de atendimento
-- Relatórios avançados
-- Cupons e promoções
-- Integração com pedidos
-- Integração com comandas
-- Deploy em ambiente cloud
-- Página pública para clientes realizarem reservas
-- Filtros avançados por restaurante, data, status e cliente
-- Melhoria na validação de horários disponíveis
-- Histórico completo de ações realizadas pelos usuários
-- Painel administrativo com permissões por tipo de usuário
-
+🧪 Exemplos de teste
+Criar usuário:
+```bash
+curl -X POST http://localhost:8080/api/usuarios \
+  -H "Content-Type: application/json" \
+  -d '{"nome":"Brunno","email":"brunno@email.com"}'
+```
+Criar enquete:
+```bash
+curl -X POST http://localhost:8080/api/enquetes \
+  -H "Content-Type: application/json" \
+  -d '{
+    "titulo":"Linguagem preferida",
+    "pergunta":"Qual linguagem você escolheria?",
+    "usuarioId":1,
+    "opcoes":["Java","Python","JavaScript","C#"]
+  }'
+```
+Votar:
+```bash
+curl -X POST http://localhost:8080/api/enquetes/1/votos \
+  -H "Content-Type: application/json" \
+  -d '{"usuarioId":1,"opcaoId":1}'
+```
 ---
-
-## Autor
-
-Desenvolvido por **Brunno Xavier de Oliveira**
-
-GitHub: https://github.com/Brunnomk
-
-LinkedIn: adicione aqui o link do seu perfil
-
+🚧 Melhorias futuras
+Agendamento automático para encerramento de enquetes
+Autenticação e login de usuários
+Controle de permissões
+Testes automatizados no backend
+Testes no frontend
+Docker Compose com backend, frontend e PostgreSQL
+Deploy em ambiente cloud
+Tema claro/escuro alternável
+Paginação e filtros de enquetes
+Documentação Swagger/OpenAPI
 ---
-
-## Licença
-
-Este projeto está sob a licença MIT.
-
-Sinta-se livre para utilizar, estudar e adaptar este projeto.
+💼 Destaque para portfólio
+Este projeto demonstra conhecimentos em:
+Desenvolvimento Full Stack
+APIs REST com Spring Boot
+Integração com PostgreSQL
+Relacionamentos JPA/Hibernate
+Validações de regras de negócio
+React com TypeScript
+Componentização de interface
+Gráficos interativos
+WebSocket/STOMP em tempo real
+Organização de CSS modularizado
+Boas práticas de arquitetura
+---
+👨‍💻 Autor
+Desenvolvido por Brunno Xavier de Oliveira.
+> Projeto criado como aplicação Full Stack para portfólio, estudos e demonstração prática de integração entre backend, frontend, banco de dados e comunicação em tempo real.
