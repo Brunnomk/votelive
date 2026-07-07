@@ -1,19 +1,15 @@
 # MesaLivre — Sistema de Reservas para Restaurantes
 
-<p align="center">
-  https://img.shields.io/badge/status-em%20desenvolvimento-blue?style=for-the-badge
-  https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white
-  https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?style=for-the-badge&logo=springboot&logoColor=white
-  https://img.shields.io/badge/Angular-17%2B-DD0031?style=for-the-badge&logo=angular&logoColor=white
-  https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
-  https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white
-  https://img.shields.io/badge/API-REST-7B42BC?style=for-the-badge
-  <img src="https://img.shields.ioout-Responsivo-00C853?style=for-the-badge
-</p>
+https://img.shields.io/badge/status-em%20desenvolvimento-blue?style=for-the-badge
+https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white
+https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?style=for-the-badge&logo=springboot&logoColor=white
+https://img.shields.io/badge/Angular-17%2B-DD0031?style=for-the-badge&logo=angular&logoColor=white
+https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white
+https://img.shields.io/badge/API-REST-7B42BC?style=for-the-badge
+https://img.shields.io/badge/Layout-Responsivo-00C853?style=for-the-badge
 
-<p align="center">
-  Sistema full stack para gerenciamento de reservas em restaurantes, com controle de mesas, clientes, horários, disponibilidade em tempo real e prevenção de conflitos.
-</p>
+Sistema full stack para gerenciamento de reservas em restaurantes, com controle de mesas, clientes, horários, disponibilidade em tempo real e prevenção de conflitos.
 
 ---
 
